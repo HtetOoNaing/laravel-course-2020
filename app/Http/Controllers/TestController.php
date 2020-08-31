@@ -23,7 +23,6 @@ class TestController extends Controller
         // ]);
 
         // dd($request->hasFile('profile'))
-
         $data = $request->all();
         if($request->hasFile('profile')) {
             $profile = $request->profile->store('images','public');
@@ -53,6 +52,7 @@ class TestController extends Controller
             'email' => 'required'
         ]);
         $data = $request->all();
+        dd($data);
         if($request->hasFile('profile')) {
             $profile = $request->profile->store('images','public');
             // dd($profile);
