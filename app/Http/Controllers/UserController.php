@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
-class PostConroller extends Controller
+use App\User;
+
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,13 @@ class PostConroller extends Controller
      */
     public function index()
     {
-        $post = POST::find(1);
-        echo $post->user->name;
+        $user = User::find(1);
+        foreach($user->posts as $post) {
+            echo $post->title , "<br>";
+        }
+        // foreach($users as $user) {
+        //     dd($user->id, $user->name, $user->posts);
+        // }
     }
 
     /**

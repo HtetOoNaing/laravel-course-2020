@@ -7,6 +7,11 @@ use App\Test;
 
 class TestController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index() {
         $tests = Test::all();
         return view('hello',['tests' => $tests]);
@@ -52,7 +57,6 @@ class TestController extends Controller
             'email' => 'required'
         ]);
         $data = $request->all();
-        dd($data);
         if($request->hasFile('profile')) {
             $profile = $request->profile->store('images','public');
             // dd($profile);

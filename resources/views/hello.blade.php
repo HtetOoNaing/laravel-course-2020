@@ -68,10 +68,8 @@
         <div class="modal-body">
           
           <div class="form-group">
-            <label for="profile">
-              <img src='' id="editProfileImg" class="rounded-circle" width="30" height="30" title="" />
-            </label>
-            <input type="file" name="profile" class="form-control d-none" id="profile">
+            <img src='' id="editProfileImg" class="rounded-circle" width="30" height="30" title="" />
+            <input type="file" name="profile" class="form-control" id="profile">
           </div>
           <div class="form-group">
             <label for="editName">Name</label>
@@ -151,9 +149,5 @@
     form.action = 'update/'+test.id;
     $('#editModal').modal('show');
   }
-
-  // $('#editProfileImg').click(function() {
-  //   $("#profile").click();
-  // })
 </script>
 @endsection

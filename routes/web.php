@@ -20,7 +20,6 @@ Route::get('/', function () {
 // Route::get('/hello', function () {
 //     return view('hello');
 // });
-
 Route::get('/tests', 'TestController@index')->name('index');
 Route::get('/create','TestController@create')->name('create');
 Route::post('/store','TestController@store')->name('store');
@@ -29,3 +28,9 @@ Route::put('/update/{test}','TestController@update')->name('update');
 Route::get('/delete/{test}','TestController@destroy')->name('delete');
 // Route::resource('tests','TestController');
 Route::resource('posts','PostConroller');
+Route::resource('users','UserController');
+
+Auth::routes();
+
+
+Route::get('/home', 'HomeController@index')->name('home');
